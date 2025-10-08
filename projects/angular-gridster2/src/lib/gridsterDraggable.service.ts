@@ -302,7 +302,7 @@ export class GridsterDraggable {
   calculateItemPositionWithoutScale(e: MouseEvent): void {
     const isRTL = this.gridster.$options.dirType === DirTypes.RTL;
     if (isRTL) {
-      this.left = window.innerWidth - (e.clientX + (this.offsetLeft + (this.width / 2))  - this.diffLeft) - this.width;
+      this.left = this.gridster.el.offsetWidth - (e.clientX + this.offsetLeft - this.diffLeft);
     } else {
       this.left = e.clientX + this.offsetLeft - this.diffLeft;
     }
